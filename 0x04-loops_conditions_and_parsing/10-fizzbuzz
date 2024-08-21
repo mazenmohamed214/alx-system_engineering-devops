@@ -1,20 +1,19 @@
 #!/usr/bin/env bash
-# Fizzbuzz
-
-n=1
-
-while [ "$n" -le 100 ]; do
+# This script is displaying numbers from 1 to 100 with some exceptions
 
 
-  if ! (( n % 3 )) && ! (( n % 5 )); then
-    echo "FizzBuzz"
-  elif ! (( n % 3 )); then
-    echo "Fizz"
-  elif ! (( n % 5 )); then
-    echo "Buzz"
-  else
-    echo "$n"
-  fi
-  
-  ((n++))
+for i in {1..100} 
+do
+    if ((i % 3 == 0 && i % 5 == 0));
+    then
+        echo "Fizzbuzz"
+    elif ((i % 3 == 0));
+    then
+        echo "Fizz"
+    elif ((i % 5 == 0));
+    then
+        echo "Buzz"
+    else
+        echo "$i"
+    fi
 done

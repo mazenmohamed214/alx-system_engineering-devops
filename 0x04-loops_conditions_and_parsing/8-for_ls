@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
-# ls using for loop
+# This script is displaying files in the current directory without the number label
 
-for file in *; do
-  echo "$file" | cut -d '-' -f 2;
+for i in `ls -1 | tr -d "[0-9]\-*"`;
+do
+    echo "$i"
 done
